@@ -21,7 +21,12 @@ class TableContainer extends Component {
   render() {
     return (
       <React.Fragment>
-        <ButtonGroup createNewTable={this.props.createNewTable} />
+        <ButtonGroup
+          toggleColHeader={this.props.toggleColHeader}
+          toggleRowHeader={this.props.toggleRowHeader}
+          createNewTable={this.props.createNewTable}
+          settings={this.props.settings}
+        />
         {this.initComTable()}
       </React.Fragment>
     );

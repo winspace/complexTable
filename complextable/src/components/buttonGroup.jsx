@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import { Col, InputNumber, Row, Input, Modal, Button } from "antd";
+import { Col, Switch, InputNumber, Row, Input, Modal, Button } from "antd";
+import RowHeader from "./smallIcon/rowHeader";
+import ColHeader from "./smallIcon/colHeader";
 class ButtonGroup extends Component {
   state = {
     newVisible: false,
@@ -59,12 +61,23 @@ class ButtonGroup extends Component {
             </Col>
           </Row>
         </Modal>
-        <Row>
+        <Row style={{ background: "rgba(232,232,232)" }}>
           <Col span={1}>
             <Button type="primary" onClick={this.showNewPanel}>
               新建
             </Button>
           </Col>
+          <Col span={1}>
+            <RowHeader
+              toggleRowHeader={this.props.toggleRowHeader}
+              settings={this.props.settings}
+            />
+            <ColHeader
+              toggleColHeader={this.props.toggleColHeader}
+              settings={this.props.settings}
+            />
+          </Col>
+          <Col span={1} />
         </Row>
       </React.Fragment>
     );

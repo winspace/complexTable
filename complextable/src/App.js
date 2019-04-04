@@ -25,12 +25,33 @@ class App extends Component {
     });
   };
 
+  toggleRowHeader = () => {
+    const tempSetting = this.state.settings;
+
+    tempSetting.rowHeaders = !this.state.settings.rowHeaders;
+    console.log(tempSetting.rowHeaders);
+    this.setState({
+      settings: tempSetting
+    });
+  };
+
+  toggleColHeader = () => {
+    const tempSetting = this.state.settings;
+    tempSetting.colHeaders = !this.state.settings.colHeaders;
+    console.log(tempSetting.colHeaders);
+    this.setState({
+      settings: tempSetting
+    });
+  };
+
   render() {
     return (
       <div className="App">
         <TableContainer
           settings={this.state.settings}
           createNewTable={this.createNewTable}
+          toggleRowHeader={this.toggleRowHeader}
+          toggleColHeader={this.toggleColHeader}
         />
       </div>
     );
