@@ -2,18 +2,38 @@ import React, { Component } from "react";
 import "./App.css";
 import TableContainer from "./components/tableContainer";
 import "antd/dist/antd.css";
+import Handsontable from "handsontable";
 
 class App extends Component {
   state = {
     settings: {
       data: null,
-      colHeaders: true,
-      rowHeaders: true,
+      colHeaders: false,
+      rowHeaders: false,
       width: "100%",
       height: "500",
       startRows: 0,
-      startCols: 0
-    }
+      startCols: 0,
+      contextMenu: {
+        items: {
+          row_above: {
+            name: "插入一行"
+          },
+          // row_below: {
+          //   name: "Insert row above this one (custom name)"
+          // },
+          separator: Handsontable.plugins.ContextMenu.SEPARATOR,
+          clear_custom: {
+            name: "清除数据",
+            callback: function() {
+              this.clear();
+            }
+          }
+        }
+      }
+    },
+    rows: null,
+    cols: null
   };
   createNewTable = (a, b) => {
     const tempSetting = this.state.settings;

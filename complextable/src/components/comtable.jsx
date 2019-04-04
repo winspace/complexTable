@@ -6,8 +6,16 @@ class ComTable extends React.Component {
     super(props);
   }
 
+  changeDate = e => {
+    console.log(e);
+  };
   render() {
-    return <HotTable settings={this.props.settings} />;
+    return (
+      <HotTable
+        settings={this.props.settings}
+        afterChange={e => this.changeDate(e)}
+      />
+    );
   }
 }
 export default ComTable;
