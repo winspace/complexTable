@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@handsontable/react": "^3.0.0",
+    "antd": "^3.16.1",
     "handsontable": "^6.2.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
