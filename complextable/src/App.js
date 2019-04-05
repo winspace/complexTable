@@ -63,6 +63,14 @@ class App extends Component {
       settings: tempSetting
     });
   };
+  fillDataFull = ()=>{
+    const tempSetting = this.state.settings;
+  
+    tempSetting.data = Handsontable.helper.createSpreadsheetData(tempSetting.startRows, tempSetting.startCols);
+    this.setState({
+      settings: tempSetting
+    });
+  }
 
   render() {
     return (
@@ -72,6 +80,7 @@ class App extends Component {
           createNewTable={this.createNewTable}
           toggleRowHeader={this.toggleRowHeader}
           toggleColHeader={this.toggleColHeader}
+          fillDataFull = {this.fillDataFull}
         />
       </div>
     );

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Col, Switch, InputNumber, Row, Input, Modal, Button } from "antd";
 import RowHeader from "./smallIcon/rowHeader";
 import ColHeader from "./smallIcon/colHeader";
+import FillDate from "./smallIcon/fillDate";
 class ButtonGroup extends Component {
   state = {
     newVisible: false,
@@ -67,7 +68,7 @@ class ButtonGroup extends Component {
               新建
             </Button>
           </Col>
-          <Col span={1}>
+          <Col span={2}>
             <RowHeader
               toggleRowHeader={this.props.toggleRowHeader}
               settings={this.props.settings}
@@ -76,8 +77,11 @@ class ButtonGroup extends Component {
               toggleColHeader={this.props.toggleColHeader}
               settings={this.props.settings}
             />
+            <FillDate settings={this.props.settings} fillDataFull = {this.props.fillDataFull}/>
           </Col>
-          <Col span={1} />
+          <Col span={1} >
+          
+          </Col>
         </Row>
       </React.Fragment>
     );

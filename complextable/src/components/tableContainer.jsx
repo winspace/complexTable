@@ -25,6 +25,7 @@ class TableContainer extends Component {
           toggleColHeader={this.props.toggleColHeader}
           toggleRowHeader={this.props.toggleRowHeader}
           createNewTable={this.props.createNewTable}
+          fillDataFull = {this.props.fillDataFull}
           settings={this.props.settings}
         />
         {this.initComTable()}
