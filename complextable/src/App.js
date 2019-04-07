@@ -15,6 +15,49 @@ class App extends Component {
       height: "500",
       startRows: 0,
       startCols: 0,
+      manualColumnFreeze:true,
+      fixedColumnsLeft: 2,
+      customBorders: [
+        {
+          range: {
+            from: {
+              row: 1,
+              col: 1
+            },
+            to: {
+              row: 3,
+              col: 4
+            }
+          },
+          top: {
+            width: 2,
+            color: '#5292F7'
+          },
+          left: {
+            width: 2,
+            color: 'orange'
+          },
+          bottom: {
+            width: 2,
+            color: 'red'
+          },
+          right: {
+            width: 2,
+            color: 'magenta'
+          }
+        },
+        {
+          row: 2,
+          col: 2,
+          left: {
+            width: 2,
+            color: 'red'
+          },
+          right: {
+            width: 1,
+            color: 'green'
+          }
+        }],
       contextMenu: {
         //https://handsontable.com/docs/7.0.0/demo-context-menu.html?_ga=2.206387603.1212794906.1554629973-1787957690.1553829183#page-default
         items: {
@@ -38,6 +81,21 @@ class App extends Component {
           },
           clear_column: {
             name: "清空列"
+          },
+          make_read_only:{
+            name:'设为只读'
+          },
+          alignment:{
+            name:"对齐"
+          },
+          freeze_column:{
+            name:"冻结"
+          },
+          unfreeze_column:{
+            name:"解冻"
+          },
+          borders:{
+            name:"边框"
           },
           // row_below: {
           //   name: "Insert row above this one (custom name)"
