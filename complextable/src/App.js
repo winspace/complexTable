@@ -13,10 +13,25 @@ class App extends Component {
       rowHeaders: false,
       width: "100%",
       height: "500",
+      comments: true,
       startRows: 0,
+      currentRowClassName: "currentRow",
+      currentColClassName: "currentCol",
       startCols: 0,
-      manualColumnFreeze:true,
+      columnSorting: true,
+      manualColumnFreeze: true,
       fixedColumnsLeft: 2,
+      manualRowMove: true,
+      search: true,
+      cell: [{ row: 1, col: 1, comment: { value: "Hello world!" } }],
+      mergeCells: [
+        { row: 1, col: 1, rowspan: 3, colspan: 3 },
+        { row: 3, col: 4, rowspan: 2, colspan: 2 },
+        { row: 5, col: 6, rowspan: 3, colspan: 3 }
+      ],
+      dropdownMenu: true,
+      filters: true,
+      bindRowsWithHeaders: "strict",
       customBorders: [
         {
           range: {
@@ -31,19 +46,19 @@ class App extends Component {
           },
           top: {
             width: 2,
-            color: '#5292F7'
+            color: "#5292F7"
           },
           left: {
             width: 2,
-            color: 'orange'
+            color: "orange"
           },
           bottom: {
             width: 2,
-            color: 'red'
+            color: "red"
           },
           right: {
             width: 2,
-            color: 'magenta'
+            color: "magenta"
           }
         },
         {
@@ -51,13 +66,14 @@ class App extends Component {
           col: 2,
           left: {
             width: 2,
-            color: 'red'
+            color: "red"
           },
           right: {
             width: 1,
-            color: 'green'
+            color: "green"
           }
-        }],
+        }
+      ],
       contextMenu: {
         //https://handsontable.com/docs/7.0.0/demo-context-menu.html?_ga=2.206387603.1212794906.1554629973-1787957690.1553829183#page-default
         items: {
@@ -82,20 +98,23 @@ class App extends Component {
           clear_column: {
             name: "清空列"
           },
-          make_read_only:{
-            name:'设为只读'
+          make_read_only: {
+            name: "设为只读"
           },
-          alignment:{
-            name:"对齐"
+          alignment: {
+            name: "对齐"
           },
-          freeze_column:{
-            name:"冻结"
+          freeze_column: {
+            name: "冻结"
           },
-          unfreeze_column:{
-            name:"解冻"
+          unfreeze_column: {
+            name: "解冻"
           },
-          borders:{
-            name:"边框"
+          borders: {
+            name: "边框"
+          },
+          mergeCells: {
+            name: "合并单元格"
           },
           // row_below: {
           //   name: "Insert row above this one (custom name)"
